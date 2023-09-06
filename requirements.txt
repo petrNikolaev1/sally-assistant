@@ -1,0 +1,3 @@
+openai==0.27.10
+aiotg==2.0.0
+aioredis==2.0.1

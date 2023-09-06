@@ -1,0 +1,14 @@
+stages:
+  - deploy_bot
+
+before_script:
+  - docker info
+
+deploy_bot:
+  stage: deploy_bot
+  script:
+    - docker-compose build --parallel
+    - docker-compose up -d redis
+    - docker-compose up -d --force-recreate bot
+  only:
+    - master
